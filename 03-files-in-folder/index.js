@@ -31,25 +31,3 @@ async function x (){
 
 x().then();
 
-
-// stdout.write(fs.readdirSync(folderPath).toString());
-//
-// const path = require('path');
-// // const fs = require('fs');
-// @import { readdir } from 'fs/promises';
-// const fs = require('fs/promises');
-// // fs.readdir(`${__dirname}/secret-folder`);
-// //
-// // try {
-// //   const files = await readdir(__filename);
-// //   for (const file of files) console.log(file);
-// // } catch (err) {
-// //   console.error(err);
-// // }
-// const folderPath = `${__dirname}/secret-folder`;
-// // const isFile = fileName => {
-// //   return fs.lstatSync(fileName).isFile()
-// // };
-// fs.readdir(folderPath).map(fileName => {
-//   return path.join(folderPath, fileName)
-// });

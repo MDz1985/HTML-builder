@@ -126,9 +126,7 @@ async function merge (){
 
 //MAKE DIR
 async function makeDir (dir) {
-  // let slash = '';
-  // if (inDir){slash = '/';}else inDir = '';
-  //
+
   let dirPath = `${__dirname}/${dir}`;
   try {
 
@@ -150,7 +148,7 @@ async function copy (from, to) {
     await fsPromise.copyFile(`${__dirname}/${from}`, `${__dirname}/${to}`);
 
   } catch {
-    console.log('Files could not be copied as they already exist');
+    // console.log('Files could not be copied as they already exist');
   }
 }
 
@@ -172,7 +170,6 @@ async function start () {
     console.log('Files could not be copied as they already exist');
   }
 }
-
 
 start().then();
 
