@@ -5,7 +5,7 @@ const { stdin, stdout } = process;
 stdout.write('Lets write text and add it to "text.txt" file!\n' +
   'Есть 2 варианта исполнения: строка содержит "exit" и - строка и есть "exit"\n' +
   '(по умолчанию - 1-ый вариант). Если вы считаете, что должно работать по 2-му варианту,\n' +
-  'пожалуйста, раскомментируйте строку 9 и закомментируйте строку 10\n');
+  'пожалуйста, раскомментируйте строку 10 и закомментируйте строку 11\n');
 stdin.on('data', data => {
   // if (data.toString().toLowerCase() === 'exit\n'){
   if (data.toString().toLowerCase().includes('exit')){
