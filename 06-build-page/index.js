@@ -6,7 +6,7 @@ let writeStreamCss;
 
 const stylesPath = `${__dirname}/styles`;
 let cssFilesCount = 0;
-let data = '';
+// let data = '';
 
 let resultArray = [];
 let readStream;
@@ -106,13 +106,11 @@ async function merge (){
 
 
           readStream = fs.createReadStream(`${stylesPath}/${file}`, 'utf-8');
-          readStream.on('data', chunk => data += chunk);
-          readStream.on('end', () => {
-            resultArray.push(data);
-
+          readStream.on('data', chunk => {//data += chunk);
+          // readStream.on('end', () => {
+            resultArray.push(chunk);
             if (resultArray.length === cssFilesCount){
-
-              writeStreamCss.write(resultArray.join(','));
+              writeStreamCss.write(resultArray.join('\n\n'));
             }
           });
           readStream.on('error', error => console.log('Error', error.message));

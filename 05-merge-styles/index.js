@@ -24,11 +24,12 @@ async function x (){
           cssFilesCount++;
 
           readStream = fs.createReadStream(`${stylesPath}/${file}`, 'utf-8');
-          readStream.on('data', chunk => data += chunk);
-          readStream.on('end', () => {
-            resultArray.push(data);
+          readStream.on('data', chunk => {
+            // data += chunk);
+          // readStream.on('end', () => {
+            resultArray.push(chunk);
             if (resultArray.length === cssFilesCount){
-              writeStream.write(resultArray.join(','));
+              writeStream.write(resultArray.join('\n\n'));
             }
           });
           readStream.on('error', error => console.log('Error', error.message));
